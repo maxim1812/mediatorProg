@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>mediator</title>
+</head>
+<body>
+
+<script src = 'manObj.js'></script>
+<script src = 'scientistObj.js'></script>
+<script src = 'renderObj.js'></script>
+
+<script>
+
+function getMediator()
+{
+	let mediator = new Object();
+
+	mediator.printIfNessesary = function(manP,scientistP,renderP)
+	{
+		if(manP.isTall() == true || scientistP.isClever() == true) renderP.printYESifTallorClever();
+	}
+
+	return mediator;
+}
+
+let man = getMan();
+let scientist = getScientist();
+let render = getRender();
+
+man.h = 210;
+scientist.iq = 123;
+
+let mediator = getMediator();
+
+mediator.printIfNessesary(man,scientist,render);
+
+</script>
+
+</body>
+</html>
